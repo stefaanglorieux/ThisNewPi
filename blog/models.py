@@ -9,9 +9,9 @@ STATUS = [
     ('2', 'Published'),
 ]
 
-class Topic(models.Models):
-    title = models.Charfield(max_length=35)
-    slug = models.Charfield(max_length=50)
+class Topic(models.Model):
+    title = models.CharField(max_length=35)
+    slug = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
@@ -27,11 +27,11 @@ class Topic(models.Models):
         return self.title
 
 class Project(models.Model):
-    title = models.Charfield(max_length=100, unique=True)
+    title = models.CharField(max_length=100, unique=True)
     billboard = models.ImageField(upload_to='media', blank=True, null=False)
-    body = models.Textfield(blank=True, null=False)
+    body = models.TextField(blank=True, null=False)
     last_entry = models.DateTimeField(null=True, blank=True)
-    slug = models.Charfield(max_length=150)
+    slug = models.CharField(max_length=150)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
@@ -89,7 +89,7 @@ class Article(models.Model):
         ordering = ['-published_at']
 
     @property
-    def last_project_update(self)
+    def last_project_update(self):
         return self.from_project.last_entry
     
     def __str__(self):
@@ -119,7 +119,7 @@ class Media(models.Model):
     media = models.ImageField(upload_to='media')
     linked_article = models.ForeignKey(Article, null=True, blank=True, on_delete=models.SET_NULL)
     linked_entry = models.ForeignKey(Journal, null=True, blank=True, on_delete=models.SET_NULL)
-    slug = models.SlugField(max_Length=120)
+    slug = models.SlugField(max_length=120)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
