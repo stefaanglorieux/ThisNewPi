@@ -19,16 +19,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from blog import views
+
 urlpatterns = [
     path('', views.home, name='home'),
-    path('article/<slug:slug>/', views.article, name='article_slug'),
-	path('journal-entry/<slug:slug>/', views.journal_entry, name='journal_slug'),
-    path('journal-entry/', views.journal, name='journal'),
-    path('articles', views.articles, name='articles'),
-    path('projects', views.projects, name='projects'),
+ #   path('article/<slug:slug>/', views.article, name='article_slug'),
+#	path('journal-entry/<slug:slug>/', views.journal_entry, name='journal_slug'),
+ #   path('journal-entry/', views.journal, name='journal'),
+ #   path('articles', views.articles, name='articles'),
+  #  path('projects', views.projects, name='projects'),
     path('admin/', admin.site.urls),
-    path('', include('mediaLibrary.urls')),
-    path('admin/', admin.site.urls),
+#    path('', include('mediaLibrary.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
