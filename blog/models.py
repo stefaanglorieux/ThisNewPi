@@ -75,7 +75,7 @@ class Article(models.Model):
     billboard = models.ImageField(upload_to='media', blank=True, null=False)
     blurb = models.TextField(max_length=200, blank=True, null=True)
     body = models.TextField(blank=True, null=False)
-    topic = models.ForeignKey(Topic, null=True, on_delete=models.SET_NULL, related_name='article_topic') # What does related name mean?
+    topic = models.ForeignKey(Topic, null=True, blank=True, on_delete=models.SET_NULL, related_name='article_topic') # What does related name mean?
     from_project = models.ForeignKey(Project, null=True, blank=True, on_delete=models.SET_NULL)
     status = models.CharField(max_length=1, choices=STATUS)
     slug = models.SlugField(max_length=100, blank=True, unique=True)

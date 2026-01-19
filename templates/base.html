@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>This New Pi</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+
+  <!-- Fonts -->
+  
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>This New Pi</h1>
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li><a href="" class="active">Home</a></li>
+                <li><a href="">Logging</a></li>
+                <li><a href="">Articles</a></li>
+                <li><a href="">Project</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+      </nav>
+    </header>
+    <main>
+        {% block home %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>This was created for personal use</p>
+    </footer>
+</body>

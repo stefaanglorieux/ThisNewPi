@@ -4,6 +4,13 @@ from datetime import datetime
 from .models import Article, Journal, Media, Project, Topic
 from django.http.response import HttpResponseRedirect
 
+admin.site.register(Article)
+admin.site.register(Journal)
+admin.site.register(Media)
+admin.site.register(Project)
+admin.site.register(Topic)
+
+"""
 class JournalAdmin(admin.ModelAdmin):
 
     change_form_template = "content-admin/change_form.html"
@@ -14,7 +21,7 @@ class JournalAdmin(admin.ModelAdmin):
         }),
         ('Associations', {
             'classes': ('collapse',),
-            'fields': ('topic', 'from_project', 'about_movie')
+            'fields': ('topic', 'from_project')
         }),
         ('Metadata', {
             'classes': ('collapse',),
@@ -128,3 +135,5 @@ class TopicAdmin(admin.ModelAdmin):
     exclude = ('created_at', 'updated_at', )
 
 admin.site.register(Topic, TopicAdmin)
+
+"""
