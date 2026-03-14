@@ -2,15 +2,15 @@
 
 {% block home %}
 
-<section class="overview-block">
-	<h2>Logbook</h2>
+<section class="overview-block logbook">
+	<!--<h2>Logbook</h2>-->
 	<div class="overview-block-content content-highlight">
 		{% for entry in journal_entries %}
 		<a href="">
 			<div class="content-item">
 				<div class="content-item-body">
+					<span class="content-item-date">{{ entry.published_at|date:"d/m/Y" }}</span>
 					<h3>{{ entry.title }}</h3>
-					<span class="content-item-date">{{ entry.published_at|date:"M d Y" }}</span>
 				</div>
 			</div>
 		</a>
@@ -19,17 +19,21 @@
 </section>
 
 <section class="overview-block">
-	<h2>Project</h2>
+	<!--<h2>Project</h2>-->
 	<div class="overview-block-content content-highlight">
 		{% for project in current_project %}
 		<a href="">
-			<div class="content-item">
-				<div class="content-item-body">
-					<h3>{{ project.title }}</h3>
-					<span class="content-item-date">{{ project.published_at|date:"M d Y" }}</span>
-				</div>
-                <div class="content-item-billboard">
-					<img src="{{ project.billboard.url }}" class="thumb">
+			<div class="card border-0 bg-transparent mb-3">
+				<div class="row g-0">
+					<div class="col-md-4">
+					<img src="{{ project.billboard.url }}" class="img-fluid rounded-start" alt="...">
+					</div>
+					<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">{{ project.title }}</h5>
+						<p class="card-text"><small class="text-body-secondary">{{ project.published_at|date:"M d Y" }}</small></p>
+						<p class="card-text">{{ project.body }}</p>
+					</div>
 				</div>
 			</div>
 		</a>
@@ -38,22 +42,25 @@
 </section>
 
 <section class="overview-block">
-	<h2>Articles</h2>
-	<div class="overview-block-content content-highlight">
-		{% for entry in article_entries %}
-		<a href="">
-			<div class="content-item">
-				<div class="content-item-body">
-					<h3>{{ entry.title }}</h3>
-					<span class="content-item-date">{{ entry.published_at|date:"M d Y" }}</span>
+	<!--<h2>Articles</h2>-->
+	{% for entry in article_entries %}
+	<a href="">
+		<div class="card border-0 bg-transparent mb-3">
+			<div class="row g-0">
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">{{ entry.title }}</h5>
+						<p class="card-text"><small class="text-body-secondary">{{ entry.published_at|date:"M d Y" }}</small></p>
+						<p class="card-text">{{ entry.blurb }}</p>
+					</div>
 				</div>
-                <div class="content-item-billboard">
-					<img src="{{ entry.billboard.url }}" class="thumb">
+				<div class="col-md-4">
+				<img src="{{ entry.billboard.url }}" class="img-fluid rounded-start" alt="...">
 				</div>
 			</div>
-		</a>
-		{% endfor %}
-	</div>
+		</div>
+	</a>
+	{% endfor %}
 </section>
 
 {% endblock %}
