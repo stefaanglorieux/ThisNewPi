@@ -67,3 +67,11 @@ p, .logbook .content-item-body {
 section {
     margin-bottom: 4rem;
 }
+
+.article {
+    padding: 20px;
+}
+
+.article-body p {
+    font-size: 1.2rem;
+}

@@ -6,7 +6,7 @@
 	<!--<h2>Logbook</h2>-->
 	<div class="overview-block-content content-highlight">
 		{% for entry in journal_entries %}
-		<a href="">
+		<a href="{% url 'journal_slug' entry.slug %}">
 			<div class="content-item">
 				<div class="content-item-body">
 					<span class="content-item-date">{{ entry.published_at|date:"d/m/Y" }}</span>

@@ -23,8 +23,8 @@ from blog import views
 
 urlpatterns = [
     path('', views.home, name='home'),
- #   path('article/<slug:slug>/', views.article, name='article_slug'),
-#	path('journal-entry/<slug:slug>/', views.journal_entry, name='journal_slug'),
+    path('article/<slug:slug>/', views.article, name='article_slug'),
+ 	path('journal-entry/<slug:slug>/', views.journal_entry, name='journal_slug'),
  #   path('journal-entry/', views.journal, name='journal'),
  #   path('articles', views.articles, name='articles'),
   #  path('projects', views.projects, name='projects'),

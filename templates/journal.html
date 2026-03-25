@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block journal %}
+
+<div class="article">
+    <div class="article-header">
+        <h2>{{ journal.title }}</h2>
+        <p>Written on: {{ journal.entrydate }}</p>
+    </div>
+    <div class="article-body">
+        <p>{{ journal.body }}</p>
+    </div>
+</div>
+
+
+{% endblock %}

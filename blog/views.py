@@ -13,3 +13,10 @@ def home(request):
 	
 	return render(request, 'home.html', {'journal_entries': journal_entries, 'current_project': current_project, 'article_entries': article_entries})
 
+def journal_entry(request, slug):
+	journal_slug = get_object_or_404(Journal, slug = slug)
+	return render(request, 'journal.html', {'journal': journal_slug})
+
+def article(request, slug):
+	article_slug = get_object_or_404(Article, slug = slug)
+	return render(request, 'articles.html', {'article': article_slug})
